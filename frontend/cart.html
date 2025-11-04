@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Cart - Sole Society</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&amp;family=Orbitron:wght@900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'primary': '#FACC15','background-dark':'#000','text-light':'#F9FAFB' }, fontFamily: { 'display':['Orbitron','sans-serif'], 'body':['Chakra Petch','sans-serif'] } } } };
+</script>
+<script defer src="assets/js/cart.js"></script>
+<script defer src="assets/js/footer.js"></script>
+</head>
+<body class="bg-background-dark text-text-light font-body">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex items-center justify-between mb-8">
+      <a href="index.html" class="text-primary font-display text-2xl">← Dashboard</a>
+    </div>
+    <h1 class="text-4xl font-display font-black mb-6">Your Shopping Cart</h1>
+    <div class="bg-black/40 rounded-lg p-6 border border-primary/30">
+      <ul id="cart-items" class="space-y-3"></ul>
+      <div class="flex items-center justify-between mt-6">
+        <p class="text-xl">Total: <span id="cart-total">₹ 0.00</span></p>
+        <a class="px-5 py-2 rounded bg-primary text-black inline-block" href="checkout.html">Checkout</a>
+      </div>
+    </div>
+  </div>
+</body></html>
+
+

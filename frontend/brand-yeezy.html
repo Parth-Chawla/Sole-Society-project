@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yeezy - Sole Society</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&amp;family=Orbitron:wght@900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'primary': '#FACC15','background-dark':'#000','text-light':'#F9FAFB' }, fontFamily: { 'display':['Orbitron','sans-serif'], 'body':['Chakra Petch','sans-serif'] } } } };
+</script>
+<script defer src="assets/js/footer.js"></script>
+</head>
+<body class="bg-background-dark text-text-light font-body">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex items-center justify-between mb-8">
+      <a href="index.html" class="text-primary font-display text-2xl">← Dashboard</a>
+      <a href="cart.html" class="text-primary">Cart</a>
+    </div>
+    <h1 class="text-4xl font-display font-black mb-6">Yeezy Collection</h1>
+    <div id="brand-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+  <script>
+    fetch('http://localhost:8080/api/sneakers?brand=Yeezy')
+      .then(r => r.json())
+      .then(items => {
+        const grid = document.getElementById('brand-grid');
+        grid.innerHTML = '';
+        items.forEach(it => {
+          const el = document.createElement('article');
+          el.className = 'group border border-primary/30 rounded-lg p-4 cursor-pointer hover:border-primary transition-colors';
+          el.innerHTML = `
+            <div class="relative h-56 w-full rounded-md overflow-hidden mb-3">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="${it.imageUrl || 'assets/img/placeholder.png'}" alt="${it.name}" onerror="this.onerror=null;this.src='assets/img/placeholder.png'"/>
+            </div>
+            <h2 class="font-display text-2xl">${it.name}</h2>
+            <p class="opacity-80 mt-1">₹ ${Number(it.price).toFixed(2)}</p>
+          `;
+          el.addEventListener('click', () => {
+            window.location.href = `sneaker-detail.html?id=${it.id}&brand=Yeezy`;
+          });
+          grid.appendChild(el);
+        });
+      })
+      .catch(() => {
+        const grid = document.getElementById('brand-grid');
+        grid.innerHTML = '<p class="opacity-80">Failed to load sneakers.</p>';
+      });
+  </script>
+</body></html>
+
+

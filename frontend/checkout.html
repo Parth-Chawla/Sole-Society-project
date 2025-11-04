@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout - Sole Society</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&amp;family=Orbitron:wght@900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'primary': '#FACC15','background-dark':'#000','text-light':'#F9FAFB' }, fontFamily: { 'display':['Orbitron','sans-serif'], 'body':['Chakra Petch','sans-serif'] } } } };
+</script>
+<script defer src="assets/js/checkout.js"></script>
+<script defer src="assets/js/footer.js"></script>
+</head>
+<body class="bg-background-dark text-text-light font-body">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex items-center justify-between mb-8">
+      <a href="cart.html" class="text-primary font-display text-2xl">← Back to Cart</a>
+      <a href="index.html" class="text-primary">Dashboard</a>
+    </div>
+
+    <h1 class="text-4xl font-display font-black mb-6">Checkout</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <section class="lg:col-span-2 bg-black/40 rounded-lg p-6 border border-primary/30">
+        <h2 class="text-2xl font-display mb-4">Shipping Address</h2>
+        <form id="checkout-form" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="full-name" class="block text-sm mb-1">Full Name</label>
+              <input id="full-name" name="fullName" type="text" required class="w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm mb-1">Email</label>
+              <input id="email" name="email" type="email" required class="w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+            <div class="md:col-span-2">
+              <label for="address" class="block text-sm mb-1">Address</label>
+              <input id="address" name="address" type="text" required class="w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+            <div>
+              <label for="city" class="block text-sm mb-1">City</label>
+              <input id="city" name="city" type="text" required class="w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+            <div>
+              <label for="state" class="block text-sm mb-1">State</label>
+              <input id="state" name="state" type="text" required class="w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+            <div>
+              <label for="zip" class="block text-sm mb-1">ZIP Code</label>
+              <input id="zip" name="zip" type="text" required class="w-full rounded-md bg-black/30 border border-white/10 px-3 py-2" />
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <h2 class="text-2xl font-display mb-3">Payment</h2>
+            <div class="space-y-2">
+              <label class="flex items-center gap-2">
+                <input type="radio" name="paymentMethod" value="card" checked class="text-primary" />
+                <span>Cash on Delivery-COD</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="paymentMethod" value="paypal" class="text-primary" />
+                <span>UPI(GPay, Paytm, PhonePe)</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full mt-4 px-5 py-3 rounded bg-primary text-black font-display text-lg">Place Order</button>
+        </form>
+      </section>
+
+      <aside class="bg-black/40 rounded-lg p-6 border border-primary/30">
+        <h2 class="text-2xl font-display mb-4">Order Summary</h2>
+        <div id="order-summary" class="space-y-3"></div>
+        <div class="mt-4 flex items-center justify-between text-xl">
+          <span>Total</span>
+          <span id="order-total">₹ 0.00</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body></html>
+
+

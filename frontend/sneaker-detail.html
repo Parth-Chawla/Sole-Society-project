@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sneaker Details - Sole Society</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&amp;family=Orbitron:wght@900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'primary': '#FACC15','background-dark':'#000','text-light':'#F9FAFB' }, fontFamily: { 'display':['Orbitron','sans-serif'], 'body':['Chakra Petch','sans-serif'] } } } };
+</script>
+<script defer src="assets/js/sneaker-detail.js"></script>
+<script defer src="assets/js/footer.js"></script>
+</head>
+<body class="bg-background-dark text-text-light font-body">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="flex items-center justify-between mb-8">
+      <a href="javascript:history.back()" class="text-primary font-display text-2xl">← Back</a>
+      <a href="cart.html" class="text-primary">Cart</a>
+    </div>
+
+    <div id="sneaker-detail" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Loading state -->
+      <div class="text-center py-8">
+        <p class="opacity-80">Loading sneaker details...</p>
+      </div>
+    </div>
+  </div>
+</body></html>

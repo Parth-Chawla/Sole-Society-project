@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sole Society - Sneaker Store</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&amp;family=Orbitron:wght@900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#FACC15", // Vivid Yellow
+              "secondary": "#EC4899", // Hot Pink
+              "accent": "#38BDF8", // Bright Blue
+              "background-light": "#111827", // Dark Gray
+              "background-dark": "#000000", // Black
+              "text-light": "#F9FAFB", // Off-white
+              "text-dark": "#E5E7EB", // Light Gray
+            },
+            fontFamily: {
+              "display": ["Orbitron", "sans-serif"],
+              "body": ["Chakra Petch", "sans-serif"],
+            },
+            borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+            boxShadow: {
+                'glow-primary': '0 0 15px 5px rgba(250, 204, 21, 0.4)',
+                'glow-secondary': '0 0 15px 5px rgba(236, 72, 153, 0.4)',
+                'glow-accent': '0 0 15px 5px rgba(56, 189, 248, 0.4)',
+            }
+          },
+        },
+      };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .text-stroke-primary {
+        -webkit-text-stroke: 1px #FACC15;
+        text-stroke: 1px #FACC15;
+        color: transparent;
+      }
+      .text-stroke-secondary {
+        -webkit-text-stroke: 1px #EC4899;
+        text-stroke: 1px #EC4899;
+        color: transparent;
+      }
+       .text-stroke-accent {
+        -webkit-text-stroke: 1px #38BDF8;
+        text-stroke: 1px #38BDF8;
+        color: transparent;
+      }
+    </style>
+</head>
+<body class="bg-background-dark font-body text-text-light">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-20 bg-background-dark/80 backdrop-blur-md border-b-2 border-primary/50 shadow-glow-primary">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex h-20 items-center justify-between">
+<a class="flex items-center gap-2 group" href="index.html">
+<svg class="h-10 w-10 text-primary transition-transform duration-300 group-hover:rotate-[-15deg] group-hover:scale-110" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+<h1 class="text-3xl font-display font-black tracking-wider text-text-light uppercase">Sole Society</h1>
+</a>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent"> search </span>
+<input id="searchInput" class="w-[32rem] rounded-full border-2 border-accent/50 bg-background-light/50 py-2.5 pl-12 pr-4 font-body text-text-light placeholder-text-dark focus:ring-2 focus:ring-accent focus:border-accent focus:outline-none transition-all duration-300" placeholder="Search your sole ..." type="text"/>
+<div id="searchDropdown" class="absolute top-full left-0 right-0 mt-2 bg-background-light/95 backdrop-blur-md border-2 border-accent/30 rounded-xl shadow-lg z-50 hidden max-h-80 overflow-y-auto">
+<div id="searchResults" class="py-2"></div>
+</div>
+</div>
+<a class="relative group rounded-full p-3 text-secondary hover:bg-secondary/20 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-background-dark transition-colors duration-300" href="cart.html">
+<span class="material-symbols-outlined text-3xl transition-transform duration-300 group-hover:scale-110"> shopping_cart </span>
+<span class="sr-only">Shopping Cart</span>
+<span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-background-dark"></span>
+</a>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+<section class="mb-16 md:mb-24">
+<h2 class="text-5xl md:text-7xl font-display font-black tracking-tighter text-center mb-12 uppercase"><span class="text-stroke-primary">Featured</span> <span class="text-primary">Brands</span></h2>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+<a class="group block overflow-hidden rounded-xl border-2 border-transparent hover:border-primary hover:shadow-glow-primary transition-all duration-300" href="brand-jordan.html">
+<div class="relative h-96 w-full">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<img alt="Jordan sneakers" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGVsAE6EcDOvW0ni9SodIQGPmbfOom-GlBrXqFgazUJ7XqwJP_EFklVW9fRWUAGo2XU-RLH7OPt-9ksHFiZ6YVjPD0jP5mV2kAqurhzDs0OWmb4u7qQjzfXVPxICeiQerNNYOT9SOmz6Z1FL0VICB2X0TYwlDWGQ_dQsDwBkm1CONEjrv_9dFc08LUZgeka9MZrveHiqtg2GGwjIuBlPxt0SdWRX66Q-kNSFdd82ukrAmp8Fm9EN_y33UZoMybK-wYnOnyEdg82hQ"/>
+<div class="absolute inset-0 flex flex-col items-center justify-end p-8 text-center">
+<h3 class="text-6xl font-display font-black text-white uppercase tracking-wider transition-transform duration-300 group-hover:-translate-y-2">Jordan</h3>
+<p class="font-body text-primary font-semibold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">VIEW COLLECTION</p>
+</div>
+</div>
+</a>
+<a class="group block overflow-hidden rounded-xl border-2 border-transparent hover:border-secondary hover:shadow-glow-secondary transition-all duration-300" href="brand-yeezy.html">
+<div class="relative h-96 w-full">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<img alt="Yeezy sneakers" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGYXJduDn2A607_eTkf7kjV_WTUs6drQht2v4iGhWfoRrKcfvr0rv8fqKV2pmYF2OzKvJhKVbut0AYw3Uk2OJaXGoeJ7BNKJYml7_Wyq876fgdAZAapYYCfT7KsSjHZcpy1wwEamInJA4xLlsJN7rbsIWxuCXrlpjU4Y-mTVZskUSxov9hhD5_-L1xYCWwTPxlEScIjmvaB-6ceb1j-OJhzoXbNoUulcLTxORQig9NT9uMoT4AT8vGgosFXyot0Y4tI9zTrIKkqZA"/>
+<div class="absolute inset-0 flex flex-col items-center justify-end p-8 text-center">
+<h3 class="text-6xl font-display font-black text-white uppercase tracking-wider transition-transform duration-300 group-hover:-translate-y-2">Yeezy</h3>
+<p class="font-body text-secondary font-semibold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">VIEW COLLECTION</p>
+</div>
+</div>
+</a>
+<a class="group block overflow-hidden rounded-xl border-2 border-transparent hover:border-accent hover:shadow-glow-accent transition-all duration-300" href="brand-onitsuka.html">
+<div class="relative h-96 w-full">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<img alt="Onitsuka Tiger sneakers" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL8QmOR2shvQWgtWnhKwMhJwZAgQVfD9tih-YPD6uXanSLUUpfrEW2pNuoI_kPb7LMPtXtJsr7Fx-NKeaI3KFiEja6ZbhrdShdqh45KTEd3Pv763WHUMSoQbrigK-GU95-Y9Yh0iKwpi9RZj9EgoCtrAjuK9ZNzuj36lILrXFNyGv63C9WbCgHjuikOJgMs2Qu7pNf0n9vKDgiLIIOOijRYcYsFUUABsfBhQgN_Lqh_vsAS0mq47audluROLdsAerUV8lxM0NPyfo"/>
+<div class="absolute inset-0 flex flex-col items-center justify-end p-8 text-center">
+<h3 class="text-6xl font-display font-black text-white uppercase tracking-wider transition-transform duration-300 group-hover:-translate-y-2">Onitsuka Tiger</h3>
+<p class="font-body text-accent font-semibold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">VIEW COLLECTION</p>
+</div>
+</div>
+</a>
+</div>
+    </section>
+    
+    <!-- Customer Reviews Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-display font-black text-center mb-12 uppercase">
+          <span class="text-stroke-primary">Customer</span> <span class="text-primary">Reviews</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-black/40 rounded-lg p-6 border border-primary/30">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                <span class="text-black font-bold text-lg">A</span>
+              </div>
+              <div>
+                <h3 class="font-display text-lg">Alex Chen</h3>
+                <div class="flex text-primary">
+                  ★★★★★
+                </div>
+              </div>
+            </div>
+            <p class="opacity-80 italic">"Amazing quality and fast shipping! The Air Jordan 1s I ordered fit perfectly and the leather quality is top-notch. Sole Society has become my go-to for sneakers."</p>
+          </div>
+          
+          <div class="bg-black/40 rounded-lg p-6 border border-primary/30">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4">
+                <span class="text-white font-bold text-lg">M</span>
+              </div>
+              <div>
+                <h3 class="font-display text-lg">Maria Rodriguez</h3>
+                <div class="flex text-primary">
+                  ★★★★★
+                </div>
+              </div>
+            </div>
+            <p class="opacity-80 italic">"Incredible selection and authentic products. My Yeezy slides are so comfortable and the customer service was excellent. Highly recommend!"</p>
+          </div>
+          
+          <div class="bg-black/40 rounded-lg p-6 border border-primary/30">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4">
+                <span class="text-white font-bold text-lg">J</span>
+              </div>
+              <div>
+                <h3 class="font-display text-lg">James Wilson</h3>
+                <div class="flex text-primary">
+                  ★★★★★
+                </div>
+              </div>
+            </div>
+            <p class="opacity-80 italic">"Best sneaker store online! The Onitsuka Tigers I bought are exactly as described and the packaging was perfect. Will definitely shop here again."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="bg-background-light/50 border-t-2 border-primary/20">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+    
+    <!-- About Us -->
+    <div>
+      <h3 class="text-xl font-display font-bold mb-4 text-primary">About Sole Society</h3>
+      <p class="text-sm opacity-80 leading-relaxed">
+        Sole Society is Mumbai's premier destination for authentic sneakers and streetwear. 
+        We curate the finest collection of Jordan, Yeezy, and Onitsuka Tiger sneakers, 
+        bringing you the latest drops and timeless classics. Our passion for sneaker culture 
+        drives us to provide exceptional quality and service to every customer.
+      </p>
+    </div>
+    
+    <!-- Contact Info -->
+    <div>
+      <h3 class="text-xl font-display font-bold mb-4 text-primary">Contact Us</h3>
+      <div class="space-y-3 text-sm">
+        <div class="flex items-center">
+          <span class="material-symbols-outlined text-primary mr-2">phone</span>
+          <span>+91 98765 43210</span>
+        </div>
+        <div class="flex items-center">
+          <span class="material-symbols-outlined text-primary mr-2">mail</span>
+          <span>hello@solesociety.in</span>
+        </div>
+        <div class="flex items-center">
+          <span class="material-symbols-outlined text-primary mr-2">location_on</span>
+          <span>Andheri East, Mumbai 400069</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Social Media -->
+    <div>
+      <h3 class="text-xl font-display font-bold mb-4 text-primary">Follow Us</h3>
+      <div class="space-y-3">
+        <div class="flex items-center">
+          <span class="text-primary mr-2">📷</span>
+          <span class="text-sm">@solesociety_mumbai</span>
+        </div>
+        <div class="flex items-center">
+          <span class="text-primary mr-2">💬</span>
+          <span class="text-sm">WhatsApp: +91 98765 43210</span>
+        </div>
+        <div class="flex items-center">
+          <span class="text-primary mr-2">📱</span>
+          <span class="text-sm">Customer Care: +91 98765 43211</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-xl font-display font-bold mb-4 text-primary">Quick Links</h3>
+      <div class="space-y-2 text-sm">
+        <div><a href="brand-jordan.html" class="opacity-80 hover:text-primary transition-colors">Jordan Collection</a></div>
+        <div><a href="brand-yeezy.html" class="opacity-80 hover:text-primary transition-colors">Yeezy Collection</a></div>
+        <div><a href="brand-onitsuka.html" class="opacity-80 hover:text-primary transition-colors">Onitsuka Collection</a></div>
+        <div><a href="cart.html" class="opacity-80 hover:text-primary transition-colors">Shopping Cart</a></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="border-t border-white/10 pt-6 text-center text-sm text-text-dark">
+    <p>© 2024 SOLE SOCIETY. ALL RIGHTS RESERVED. | Made with ❤️ in Mumbai</p>
+  </div>
+</div>
+</footer>
+</div>
+
+<script src="assets/js/app.js"></script>
+</body></html>
+
+
